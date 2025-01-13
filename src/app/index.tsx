@@ -1,12 +1,21 @@
 import React from "react";
-import { Text, View } from "react-native";
-import { Greet } from "../components/greet";
+import { View } from "react-native";
+import DynamicCompontent from "../components/DynamicCompontent";
 
 function Index() {
   return (
-    <View>
-      <Text className="">Hello World</Text>
-      <Greet />
+    <View
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      {/* <ImageComponent />
+      <Greet name="Darwin" />
+      <Greet name="My name is Darwin and I love Coding" />
+      <ButtonComponent /> */}
+      <DynamicCompontent />
     </View>
   );
 }
