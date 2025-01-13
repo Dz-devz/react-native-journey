@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "react-native-playground",
-    "slug": "react-native-playground",
+    "name": "react-native-journey",
+    "slug": "react-native-journey",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
