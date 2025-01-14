@@ -17,4 +17,4 @@ function ANDOperatorAndTernary() {
   );
 }
 
-export default ANDOperator;
+export default ANDOperatorAndTernary;

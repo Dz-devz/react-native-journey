@@ -1,6 +1,6 @@
 import React from "react";
 import { View } from "react-native";
-import ANDOperatorAndTernary from "../components/ANDOperatorAndTernary";
+import AddTask from "../components/AddTask";
 
 function Index() {
   return (
@@ -22,7 +22,14 @@ function Index() {
       {/* <ListData /> */}
       {/* <HugeComponent /> */}
       {/* <ParentComponent /> */}
-      <ANDOperatorAndTernary />
+      {/* <WithoutState /> */}
+      {/* <WithState /> */}
+      {/* <UpdateArray />
+      <UpdateObject /> */}
+      {/* <SharingState /> */}
+      {/* <Weather /> */}
+      {/* <ColorPicker /> */}
+      <AddTask />
     </View>
   );
 }
