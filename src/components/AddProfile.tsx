@@ -11,12 +11,10 @@ type State = {
   profiles: ProfileProps[];
 };
 
-type ActionType = {
-  type: "ADD_PROFILE" | "UPDATE_PROFILE" | "DELETE_PROFILE";
-  text?: string;
-  age?: string;
-  id?: string;
-};
+type ActionType =
+  | { type: "ADD_PROFILE"; text: string; age: string }
+  | { type: "UPDATE_PROFILE"; id: string; text?: string; age?: string }
+  | { type: "DELETE_PROFILE"; id: string };
 
 const initialState = { profiles: [] };
 
@@ -28,8 +26,8 @@ const reducer = (state: State, action: ActionType): State => {
           ...state.profiles,
           {
             id: Date.now().toString(),
-            text: action.text || "",
-            age: action.age || "",
+            text: action.text,
+            age: action.age,
           },
         ],
       };
