@@ -1,6 +1,6 @@
 import React from "react";
 import { View } from "react-native";
-import AddTask from "../components/AddTask";
+import AddProfile from "../components/AddProfile";
 
 function Index() {
   return (
@@ -29,7 +29,11 @@ function Index() {
       {/* <SharingState /> */}
       {/* <Weather /> */}
       {/* <ColorPicker /> */}
-      <AddTask />
+      {/* <AddTask /> */}
+      {/* <MyEffect /> */}
+      {/* <DataFetching /> */}
+      {/* <ReducerTask /> */}
+      <AddProfile />
     </View>
   );
 }
