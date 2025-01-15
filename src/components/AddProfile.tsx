@@ -1,5 +1,12 @@
 import React, { useReducer, useState } from "react";
-import { Button, FlatList, Text, TextInput, View } from "react-native";
+import {
+  Button,
+  FlatList,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+} from "react-native";
 
 type ProfileProps = {
   id: string;
@@ -73,6 +80,8 @@ const AddProfile = () => {
   const updateProfile = (id: string) => {
     if (name.trim() && age.trim()) {
       dispatch({ type: "UPDATE_PROFILE", id, text: name, age: age });
+      setName("");
+      setAge("");
     }
   };
 
@@ -85,20 +94,48 @@ const AddProfile = () => {
 
   const renderProfile = ({ item }: { item: ProfileProps }) => {
     return (
-      <View>
-        <Text>{item.text}</Text>
-        <Text>{item.age}</Text>
-        <Text onPress={() => updateProfile(item.id)}>Update</Text>
-        <Text onPress={() => deleteProfile(item.id)}>Delete</Text>
+      <View style={styles.profileItem}>
+        <Text style={styles.profileText}>{item.text}</Text>
+        <Text style={styles.profileText}>{item.age}</Text>
+        <Text
+          style={styles.editButton}
+          onPress={() => {
+            updateProfile(item.id);
+            setName(item.text);
+            setAge(item.age);
+          }}
+        >
+          Update
+        </Text>
+        <Text
+          style={styles.removeButton}
+          onPress={() => {
+            deleteProfile(item.id);
+            setName("");
+            setAge("");
+          }}
+        >
+          Delete
+        </Text>
       </View>
     );
   };
 
   return (
     <View>
-      <Text>Add Profile</Text>
-      <TextInput placeholder="Enter Name" value={name} onChangeText={setName} />
-      <TextInput placeholder="Enter Age" value={age} onChangeText={setAge} />
+      <TextInput
+        style={styles.input}
+        placeholder="Enter Name"
+        value={name}
+        onChangeText={setName}
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="Enter Age"
+        value={age}
+        onChangeText={setAge}
+        keyboardType="numeric"
+      />
       <Button title="Add Profile" onPress={addProfile} />
       <FlatList
         data={state.profiles}
@@ -110,3 +147,32 @@ const AddProfile = () => {
 };
 
 export default AddProfile;
+
+const styles = StyleSheet.create({
+  input: {
+    height: 40,
+    borderColor: "gray",
+    borderWidth: 1,
+    marginBottom: 10,
+    paddingHorizontal: 10,
+  },
+  profileItem: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingVertical: 10,
+    borderBottomWidth: 1,
+    borderBottomColor: "#ccc",
+  },
+  profileText: {
+    fontSize: 16,
+    flex: 1,
+  },
+  editButton: {
+    color: "blue",
+    marginRight: 10,
+  },
+  removeButton: {
+    color: "red",
+  },
+});
