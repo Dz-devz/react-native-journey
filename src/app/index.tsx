@@ -1,16 +1,10 @@
 import React from "react";
-import { View } from "react-native";
-import AddProfile from "../components/AddProfile";
+import { Text, View } from "react-native";
+import "../../global.css";
 
 function Index() {
   return (
-    <View
-    // style={{
-    //   display: "flex",
-    //   alignItems: "center",
-    //   justifyContent: "center",
-    // }}
-    >
+    <View className="bg-teal-500">
       {/* <ImageComponent /> */}
       {/* <Greet name="Darwin" />
       <Greet name="My name is Darwin and I love Coding" /> */}
@@ -33,7 +27,11 @@ function Index() {
       {/* <MyEffect /> */}
       {/* <DataFetching /> */}
       {/* <ReducerTask /> */}
-      <AddProfile />
+      {/* <AddProfile /> */}
+      {/* <ContextComponent /> */}
+      {/* <WithCustomHooks /> */}
+      {/* <MyForm /> */}
+      <Text className="text-red-500">Text</Text>
     </View>
   );
 }
