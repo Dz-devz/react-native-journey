@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { View } from "react-native";
 import "../../global.css";
 
 function Index() {
@@ -31,7 +31,7 @@ function Index() {
       {/* <ContextComponent /> */}
       {/* <WithCustomHooks /> */}
       {/* <MyForm /> */}
-      <Text className="text-red-500">Text</Text>
+      {/* <Text className="text-red-500">Text</Text> */}
     </View>
   );
 }
